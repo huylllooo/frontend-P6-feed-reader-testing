@@ -4,7 +4,7 @@
 
 Select 'Download .zip' option, extract downloaded file somewhere and open index.html file with your browser. Tests' results will be shown at the bottom of the page
 
-All tests imlementations are written in js/feedreader.js file
+All tests imlementations are written in jasmine/spec/feedreader.js file
 
 ### v0.1
 
