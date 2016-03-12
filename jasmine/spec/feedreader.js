@@ -105,14 +105,18 @@ $(function() {
          var oldContents,
             newContents;
          beforeEach(function(callback) {
-            loadFeed(0, callback);
-            oldContents = $('.feed').html();
+            loadFeed(0, function() {
+                oldContents = $('.feed').html();
+                callback();
+            });
          });
+         it('should change the content when a new feed is loaded', function(callback) {
+            loadFeed(1, function() {
+                newContents = $('.feed').html();
+                expect(newContents).not.toEqual(oldContents);
+                callback();
+            });
 
-            loadFeed(1);
-            newContents = $('.feed').html();
-         it('should change the content when a new feed is loaded', function() {
-            expect(newContents).not.toEqual(oldContents);
          })
     });
 }());
